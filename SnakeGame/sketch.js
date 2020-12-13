@@ -15,7 +15,7 @@ function setup() {
 
 	}
 
-function	resetSketch(){
+function resetSketch(){
 		snake = new Snake();
 		w = floor(width/rez);
 		h = floor(height/rez);
@@ -35,16 +35,20 @@ function	resetSketch(){
 function keyPressed(){
   switch(keyCode){
     case LEFT_ARROW:
-    snake.setDir(-1,0);
+		if(snake.getXdir() != 1)
+			snake.setDir(-1,0);
 		break;
-		case RIGHT_ARROW:
-	  snake.setDir(1,0);
+	case RIGHT_ARROW:
+		if(snake.getXdir() != -1)
+			snake.setDir(1,0);
 		break;
-		case  UP_ARROW:
-		snake.setDir(0,-1);
+	case UP_ARROW:
+		if(snake.getYdir() != 1)
+			snake.setDir(0,-1);
 		break;
-		case  DOWN_ARROW:
-	  snake.setDir(0,1);
+	case DOWN_ARROW:
+		if(snake.getYdir() != -1)
+		  	snake.setDir(0,1);
 		break;
 	}
   }
