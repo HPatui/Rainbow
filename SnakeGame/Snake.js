@@ -16,6 +16,15 @@ head.y+=this.ydir;
 this.body.push(head);
 }
 
+getXdir(){
+  return this.xdir;
+}
+
+getYdir(){
+  return this.ydir;
+}
+
+
 setDir(x,y){
   this.xdir=x;
   this.ydir=y;
